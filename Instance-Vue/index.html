@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Instance Vue</title>
+</head>
+<body>
+    <!--Изучение Object.freeze()-->
+    <div id="app1">
+        <h3>Without Object.freeze()</h3>
+        <p>{{ foo }}</p>
+        <button v-on:click="foo = 'new value from button'">Change</button>
+    </div>
+    <div id="app1_freeze">
+        <h3>With Object.freeze()</h3>
+        <p>{{ foo }}</p>
+        <button v-on:click="foo = 'new value from button'">Change</button>
+    </div>
+
+    <!-- Изучение служебных методов и свойств-->
+    <div id="serv-methods">
+        <h3>Service methods and properties</h3>
+        <p>{{ a }}</p>
+        <button v-on:click="a = 5">Set a=5</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
