@@ -69,3 +69,15 @@ vm.$watch('a', function(newValue, oldValue) {
     // Этот коллбэк будет вызван, когда изменится `vm.a`
     alert("New value of 'a' is " + newValue);
 })
+
+
+//хуки жизненного цикла экземпляра
+//created вызывается после создания экземлпяра
+new Vue({
+    data: {
+        a: 1
+    },
+    created: function() {
+        console.log('Значение a: ' + this.a)
+    }
+})
