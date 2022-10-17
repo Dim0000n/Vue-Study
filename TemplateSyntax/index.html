@@ -40,6 +40,51 @@
         <button v-bind:disabled="isButtonDisabled">Button {{isButtonDisabled}}</button>
         <button v-on:click="switchOnOff">Switch on/of the Button</button>
     </div>
+
+    <!--Выражения JavaScript-->
+    <div id="app-5">
+        <h3>JavaScript code</h3>
+        <p>Number = {{ number }}</p>
+        <p>Number + 1 = {{ number + 1 }}</p>
+        <p>{{ ok ? 'YES' : 'NO'}}</p>
+        <button v-on:click="changeValue">Change OK</button>
+        <p>Message: {{ message }}</p>
+        <p>Reversed mesage: {{ message.split("").reverse("").join("") }}</p>
+        <div v-bind:id="'list-' + id">id</div>
+    </div>
+
+    <!--Динамически аргументы-->
+    <!--поддерживаются версией 2.6.0+ -->
+    <div id="app-6">
+        <h3>Dynamic arguments</h3>
+        <a v-bind:[attributeName]="url">Study Vue.js</a>
+    </div>
+    
+
+    <!--Сокращения-->
+    <!--Сокращение v-bind-->
+    <div id="app-7">
+        <h3>Contraction of "v-bind"</h3>
+        <a v-bind:href="url">Fully syntax</a>
+        <a :href="url">Contracted form</a>
+        <a :[key]="url">Contracted form with dynamic argument (2.6.0+)</a>
+    </div>
+
+    <!--Сокращение v-on-->
+    <div id="app-8">
+        <h3>Contraction of "v-on"</h3>
+        <a v-on:click="getAlert">Fully syntax</a>
+        <a @click="getAlert">Contracted form</a>
+        <a @[event]="getAlert">Contracted form with dynamic argument</a>
+    </div>
+
+
     <script src="index.js"></script>
+    <style>
+        a {
+            display: block;
+            text-decoration: none;
+        }
+    </style>  
 </body>
 </html>
