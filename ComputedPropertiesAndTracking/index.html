@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!--Для примера app-6-->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <title>Computed Properties And Tracking</title>
 </head>
 <body>
@@ -14,6 +17,41 @@
         <p> Reversed message: {{ message.split("").reverse().join("") }}</p>
     </div>
 
+    <div id="app-2">
+        <h3>Computed property</h3>
+        <p>Original message {{ message }}</p>
+        <p>Reversed message {{ reversedMessage }}</p>
+    </div>
+
+    <div id="app-3">
+        <h3>Watcher</h3>
+        <p> {{ fullName }}</p>
+        <input v-model="firstName">
+        <input v-model="lastName">
+    </div>
+
+    <div id="app-4">
+        <h3>Tracking with computed properties</h3>
+        <p> {{ fullName }}</p>
+        <input v-model="firstName">
+        <input v-model="lastName"></input>
+    </div>
+
+    <div id="app-5">
+        <h3>Setter for Computed Properties</h3>
+        <p>First Name: {{ firstName }}</p>
+        <p>Last Name: {{ lastName }}</p>
+        <input v-model="fullName">
+    </div>
+
+    <div id="app-6">
+        <h3>Watchers</h3>
+        <p>
+            Ask me a question I can answer "Yes" or "No"
+            <input v-model="question"> 
+        </p>
+        <p>{{ answer }}</p>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
