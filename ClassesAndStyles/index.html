@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>ClassesAndStyles</title>
+</head>
+<body>
+    <div id="app-1">
+        <h3>V-bind:class</h3>
+        <p class="static" v-bind:class="{ active: isActive, 'text-danger': hasError}">Example</p>
+        <button v-on:click="switchActive">Switch Active</button>
+        <button v-on:click="switchError">Switch Error</button>
+    </div>
+
+    <div id="app-2">
+        <h3>Class as Object</h3>
+        <p v-bind:class="classObject">Example2</p>
+    </div>
+
+    <div id="app-3">
+        <h3>Via Computed Properties</h3>
+        <p v-bind:class="classObject">Example3</p>
+        <button v-on:click="switchError">SwitchError</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+<style>
+    .static {
+        font-size: 25px;
+    }
+
+    .text-danger {
+        color: red;
+        text-transform: uppercase;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
+</style>
+</html>
