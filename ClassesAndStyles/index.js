@@ -39,3 +39,11 @@ new Vue({
         }
     }
 })
+
+new Vue({
+    el:"#app-4",
+    data: {
+        staticClass: "static",
+        errorClass: "text-danger"
+    }
+})

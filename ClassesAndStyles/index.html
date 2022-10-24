@@ -25,6 +25,11 @@
         <p v-bind:class="classObject">Example3</p>
         <button v-on:click="switchError">SwitchError</button>
     </div>
+
+    <div id="app-4">
+        <h3>Arrays</h3>
+        <p v-bind:class="[staticClass, errorClass]">Example4</p>
+    </div>
     <script src="index.js"></script>
 </body>
 <style>
