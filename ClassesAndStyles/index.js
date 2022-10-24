@@ -1,3 +1,4 @@
+//классы по условиям
 new Vue({
     el: "#app-1",
     data: {
@@ -14,6 +15,7 @@ new Vue({
     }
 })
 
+//класс как объект
 new Vue({
     el: "#app-2",
     data: {
@@ -23,6 +25,7 @@ new Vue({
     }
 })
 
+//объект как вычилсяемое свойство
 new Vue({
     el: "#app-3",
     data: {
@@ -40,10 +43,39 @@ new Vue({
     }
 })
 
+//массивы
 new Vue({
     el:"#app-4",
     data: {
         staticClass: "static",
         errorClass: "text-danger"
+    }
+})
+
+//массив классов с условием
+new Vue({
+    el:"#app-5",
+    data: {
+        staticClass: "static",
+        errorClass: "text-danger",
+        isError: false
+    },
+    methods: {
+        switchError: function() {
+            this.isError = !this.isError
+        }
+    }
+})
+
+//inline styles
+new Vue({
+    el:"#app-6",
+    data: {
+        activeColor: 'green',
+        fontSize: 30,
+        styleObject: {
+            color: 'blue',
+            fontSize: "20px"
+        }
     }
 })
