@@ -31,6 +31,53 @@
         <div v-if="Math.random() > 0.5">You can see me now</div>
         <div v-else>Now, you can't</div>
     </div> 
+
+    <div id="app-4">
+        <h3>V-else-if</h3>
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+        <button v-on:click="shiftToNext">Get Next</button>
+    </div>
+
+    <div id="app-5">
+        <h3>Control of elements reusing via the word "key"</h3>
+        <p>Without key</p>
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Input username" v-bind:title="title">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Input Email" v-bind:title="title">
+        </template>
+        <button v-on:click="switchType">Switch type</button>
+        <p>With key</p>
+        <template v-if="loginTypeKey === 'username'">
+            <label>Username</label>
+            <input placeholder="Input username" v-bind:title="title" key="username-input">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Input Email" v-bind:title="title" key="email-input">
+        </template>
+        <button v-on:click="switchTypeKey">Switch type</button>
+    </div>
+
+    <div id="app-6">
+        <h3>v-show</h3>
+        <p v-show="flag">Hello!</p>
+        <button v-on:click="switchFlag">{{ label }}</button>
+    </div>
     <script src="index.js"></script>
     </script>
 </body>
