@@ -46,6 +46,38 @@
             </li>
         </ul>
     </div>
+
+    <div id="app-4">
+        <h3>Rendering of filtred/sorted arrays</h3>
+        <p>Even numbers</p>
+        <ul>
+            <li v-for="n in evenNumbers">{{ n }}</li>
+        </ul>
+        <p>Even numbers in sets</p>
+        <ol v-for="set in sets">
+            <li v-for="n in even(set)">{{ n }}</li>
+        </ol>
+    </div>
+
+    <div id="app-5">
+        <h3>V-for and Ranges</h3>
+        <div>
+            <span v-for="n in 10">{{ n }} </span>
+        </div>
+    </div>
+
+    <div id="app-6">
+        <h3>V-for and Templates</h3>
+        <!-- <p>{{ check }}</p> -->
+        <ul>
+            <template v-for="item in items">
+                <li>{{ item.msg }}</li>
+                <li class="divider" role="presentation"></li>
+            </template>
+
+        </ul>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>
