@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Events</title>
+</head>
+<body>
+    <div id="app-1">
+        <h3>Envents subscribing</h3>
+        <button v-on:click="counter += 1">+1</button>
+        <p>The button above was clicked {{ counter }} times.</p>
+    </div>
+
+    <div id="app-2">
+        <h3>Handlers</h3>
+        <button v-on:click="greet">Say Hello!</button>
+    </div>
+
+    <div id="app-3">
+        <h3>Methods and inline-handlers</h3>
+        <button v-on:click="say('hi')">Say hi</button>
+        <button v-on:click="say('what')">Say what</button>
+        <h3>Inline-handlers with DOM event</h3>
+        <button v-on:click="warn('Form cannot be sended.', $event)">Send</button>
+    </div>
+
+    <div id="app-4">
+        <h3>Keys modifiers</h3>
+        <input type="button" value="Press Enter" v-on:keyup.enter="say('Key enter')">
+        <h3>Modifier .exact</h3>
+        <button v-on:click.ctrl="onCtrl">Ctrl but might be with Alt or Shift</button>
+        <button v-on:click.ctrl.exact="onlyCtrl">only Ctrl</button>
+        <button v-on:click.exact="onClick">Without System Modifier</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
