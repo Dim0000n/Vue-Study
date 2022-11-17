@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Forms</title>
+</head>
+<body>
+    <div id="app-1">
+        <h3>Text</h3>
+        <input v-model="message" placeholder="change me">
+        <p>The message: {{ message }}</p>
+        <h3>Multiline text</h3>
+        <span>The multiline message:</span>
+        <p style="white-space: pre-line;"> {{ ml_message }}</p>
+        <br>
+        <textarea v-model="ml_message" placeholder="enter few strings"></textarea>
+    </div>
+
+    <div id="app-2">
+        <h3>Checkbox</h3>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+        
+        <h3>List of checkboxes</h3>
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Selected names: {{ checkedNames }}</span>
+    </div>
+
+    <div id="app-3">
+        <h3>Radiobuttins</h3>
+        <input type="radio" id="one" value="One" v-model="picked">
+        <label for="one">One</label>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <label for="Two">Two</label>
+        <br>
+        <span> Picked: {{ picked }}</span>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
