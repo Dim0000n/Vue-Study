@@ -23,3 +23,18 @@ new Vue({
         picked: ""
     }
 })
+
+//selectors
+new Vue({
+    el: "#app-4",
+    data: {
+        selected: "",
+        mult_selected: [],
+        dyn_selected: 'A',
+        options: [
+            {text: "One", value: "A"},
+            {text: "Two", value: "B"},
+            {text: "Three", value: "C"}
+        ]
+    }
+})

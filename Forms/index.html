@@ -44,6 +44,35 @@
         <br>
         <span> Picked: {{ picked }}</span>
     </div>
+
+    <di id="app-4">
+        <h3>Selectors</h3>
+        <select v-model="selected">
+            <option disabled value="">Select one of these</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span style="display: block;">Selected: {{ selected }}</span>
+        <h4>Multiple values</h4>
+        <select v-model="mult_selected" multiple>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <br>
+        <span>Selected: {{ mult_selected }}</span>
+        <h4>Dynamic rendering via v-for</h4>
+        <select v-model="dyn_selected">
+            <option v-for="option in options" v-bind:value="option.value">
+                {{option.text}}
+            </option>
+        </select>
+        <br>
+        <span>Selected: {{ dyn_selected }}</span>
+
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>
