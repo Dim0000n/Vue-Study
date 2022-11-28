@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base of Components</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app-1">
+        <h3>Basic example</h3>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+    </div>
+
+    <div id="app-2">
+        <h3>Properties</h3>
+        <blog-post title="My journey with Vue"></blog-post>
+        <blog-post title="Blogging with Vue"></blog-post>
+        <blog-post title="Why Vue is so fun"></blog-post>
+        <h4>Array</h4>
+        <blog-post
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:title="post.title"
+        ></blog-post>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
