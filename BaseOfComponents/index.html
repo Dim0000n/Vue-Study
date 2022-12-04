@@ -28,6 +28,53 @@
             v-bind:title="post.title"
         ></blog-post>
     </div>
+
+    <div id="app-3">
+        <h3>Event listening</h3>
+        <div :style="{ fontSize: postFontSize + 'em' }">
+            <blog-post-events
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+                v-on:enlarge-text="postFontSize += 0.1"   
+            ></blog-post-events>
+        </div>
+
+        <h4>Emit data in event</h4>
+        <div :style="{ fontSize: postFontSize + 'em' }">
+            <blog-post-events-data
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+                v-on:enlarge-text="postFontSize += $event"   
+            ></blog-post-events-data>
+        </div>
+
+        <h4>Emit data through method</h4>
+        <div :style="{ fontSize: postFontSize + 'em' }">
+            <blog-post-events-data
+                v-for="post in posts"
+                v-bind:key="post.id"
+                v-bind:post="post"
+                v-on:enlarge-text="onEnlargeText"   
+            ></blog-post-events-data>
+        </div>
+    </div>
+
+    <div id="app-4">
+        <h3>v-model Usage in Component</h3>
+        <custom-input v-model="searchText"></custom-input>
+    </div>
+
+    <div id="app-5">
+        <h3>Slots</h3>
+        <slots>
+            Motherfuckers!
+        </slots>
+        <slots>
+            My friend.
+        </slots>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
