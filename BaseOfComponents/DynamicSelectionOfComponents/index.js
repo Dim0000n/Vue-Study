@@ -22,7 +22,7 @@ new Vue({
 });
 
 
-//dynamic component demo V2
+//dynamic component demo  every tab as object
 var tabs = [
     {
         name: "Home2",
