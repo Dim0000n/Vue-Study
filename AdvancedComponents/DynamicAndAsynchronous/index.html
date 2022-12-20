@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep-Alive</title>
+    <script src="https://unpkg.com/vue@2"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="dynamic-component-demo">
+        <button
+        v-for="tab in tabs"
+        v-bind:key="tab"
+        v-bind:class="['tab-button', { active: currentTab === tab}]"
+        v-on:click="currentTab = tab"
+        >
+        {{ tab }}
+    </button>
+
+    <keep-alive>
+        <component v-bind:is="currentTabComponent" class="tab"></component>
+    </keep-alive>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
