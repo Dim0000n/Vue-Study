@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation for lists and hiding/showing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    
+    <div id="app1">
+        <h1>Animation for single element/component</h1>
+        <button v-on:click="show = !show">
+            Switch
+        </button>
+        <!--Компонент обертка для анимации появления/исчезновения -->
+        <transition name="fade">
+            <p v-if="show">Hello!</p>
+        </transition>
+    </div>
+
+    <div id="app2">
+        <h1>CSS-transition</h1>
+        <button @click="show = !show">
+            Switch drawing
+        </button>
+        <transition name="slide-fade">
+            <p v-if="show">Hello!</p>
+        </transition>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
