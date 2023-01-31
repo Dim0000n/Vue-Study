@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@2"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Animation Between Elements</title>
+</head>
+<body>
+    <div id="app1">
+        <h1>v-if/v-else</h1>
+        <transition name="app1">
+            <button v-if="isEditing" key="save" @click="isEditing = false">
+                Save
+            </button>
+            <button v-else key="edit" @click="isEditing = true">
+                Edit
+            </button>
+        </transition>
+    </div>
+
+    <div id="app2">
+        <h1>Trinary condition</h1>
+        <transition name="app1">
+            <button :key="isEditing" @click="isEditing = !isEditing">
+                {{ isEditing ? 'Save' : 'Edit'}}
+            </button>
+        </transition>
+    </div>
+
+    <div id="app3">
+        <!--out-in - first element leave then second appear-->
+        <h1>Out-in</h1>
+        <transition name="app1" mode="out-in">
+            <button :key="isEditing" @click="isEditing = !isEditing">
+                {{ isEditing ? 'Save' : 'Edit'}}
+            </button>
+        </transition>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

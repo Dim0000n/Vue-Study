@@ -1,0 +1,8 @@
+/*v-if/v-else*/
+.app1-enter-active, .app1-leave-active {
+    transition: opacity .5s;
+}
+
+.app1-enter, .app1-leave-to {
+    opacity: 0;
+}
