@@ -30,6 +30,47 @@
             <p v-if="show">Hello!</p>
         </transition>
     </div>
+
+    <div id="app3">
+        <h1>CSS-animation</h1>
+        <button @click="show = !show">Switch drawing</button>
+        <transition name="bounce">
+            <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+        </transition>
+    </div>
+
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+    <div id="app4">
+        <h1>Custom tansition classes</h1>
+        <button @click="show = !show">
+            Switch
+        </button>
+        <transition
+            name="custom-classes-trainsition"
+            enter-active-class="animated tada"
+            leave-active-class="animated bounceOutRight"
+            >
+            <p v-if="show">Hello</p>
+        </transition>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <div id="app5">
+        <h1>JS-hooks</h1>
+        <button @click="show = !show">
+            Switch
+        </button>
+        <transition
+            @before-enter="beforeEnter"
+            @enter="enter"
+            @leave="leave"
+            :css="false"
+            >
+            <p v-if="show">
+                Demo
+            </p>
+        </transition>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
