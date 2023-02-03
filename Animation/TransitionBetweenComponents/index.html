@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition Between Components</title>
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <div id="app1">
+        <h3>Transition Between Components</h3>
+        <input type="radio" id="A" name="AB" @click="view = 'v-a'">
+        <label for="A">A</label>
+        <input type="radio" id="B" name="AB" @click="view = 'v-b'">
+        <label for="B">B</label>
+        <transition name="component-fade" mode="out-in">
+            <component :is="view"></component> 
+        </transition>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
