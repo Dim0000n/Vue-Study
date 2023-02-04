@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@2"></script>
+    <title>Lists Transition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app1">
+        <h3>Animation of Insertion and Deletion Elements From List</h3>
+        <button @click="add">Insert</button>
+        <button @click="remove">Remove</button>
+        <!--use transition-group to animate elements in lists-->
+        <!--The attribute "tag" means the tag, thas will be added to DOM-->
+        <transition-group name="list" tag="p">
+            <span v-for="item in items" :key="item" class="list-item">
+                {{ item }}
+            </span>
+        </transition-group>
+    </div>
+
+    <!--include lodash.js to shuffle elements-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    <div id="app2" class="demo">
+        <h3>Transition of elements in list</h3>
+        <button @click="shuffle">Shuffle</button>
+        <transition-group name="flip-list" tag="ul">
+            <li v-for="item in items" :key="item">
+                {{ item }}
+            </li>
+        </transition-group>
+    </div>
+    
+    <div id="app3">
+        <h3>Any changes animation</h3>
+        <button @click="shuffle">Shuffle</button>
+        <button @click="add">Add</button>
+        <button @click="remove">Remove</button>
+        <transition-group name="list-complete" tag="p">
+            <span
+                v-for="item in items"
+                :key="item"
+                class="list-complete-item"
+            >
+                {{ item }}
+            </span>
+        </transition-group>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

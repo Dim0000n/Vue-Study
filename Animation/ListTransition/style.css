@@ -1,0 +1,46 @@
+.list-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/*appear and hide animation*/
+.list-enter-active, .list-leave-active {
+    transition: all 1s;
+}
+
+/*before start and after and states*/
+.list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+
+/*transition of elements in list*/
+/*Use NAME-move class to animate eliments transition */
+.flip-list-move {
+    transition: transform 1s;
+}
+
+.demo ul {
+    list-style: none;
+}
+
+
+
+/*Any changes animation*/
+/*Instead of usage NAME-move class, we define 
+.list-comlete-item and NAME-leave-active class in difference with #app1 */
+.list-complete-item {
+    transition: all 1s;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.list-complete-enter, .list-complete-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.list-complete-leave-active {
+    position: absolute;
+}
