@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://unpkg.com/vue@2"></script>
+    <title>Dynamic Transition</title>
+</head>
+<body>
+    <div id="app1" class="demo">
+        <h1>Dynamic Transition</h1>
+        Fade In: <input type="range" v-model="fadeInDuration" min="0" :max="maxFadeDuration">
+        Fade Out: <input type="range" v-model="fadeOutDuration" min="0" :max="maxFadeDuration">
+        
+        <transition
+            :css="false"
+            @before-enter="beforeEnter"
+            @enter="enter"
+            @leave="leave"
+        >
+        <p v-if="show">Hello</p>
+        </transition>
+        <button
+            v-if="stop"
+            @click="stop = false; show = false"
+        >
+            Start the Animation
+        </button>
+        <button
+            v-else
+            @click="stop = true"
+        >
+            Stop the Animation
+        </button>   
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
