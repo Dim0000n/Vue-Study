@@ -16,6 +16,34 @@
         <input v-model.number="number" type="number" step="20">
         <p>{{ animatedNumber }}</p>
     </div>
+
+
+    <!--Libraries for CSS-animation-->
+    <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/color-js@1.0.3"></script>
+    <div id="app2">
+        <h1>CSS-color animation via observer</h1>
+        <input
+            v-model="colorQuery"
+            @keyup.enter="updateColor"
+            placeholder="Enter the Color"
+        >
+        <button @click="updateColor">Update</button>
+         <p>Preview:</p>
+         <span
+            :style="{backgroundColor: tweenedCSSColor}"
+            class="app2-color-preview"
+            ></span>
+        <p>{{ tweenedCSSColor }}</p>
+    </div>
+
     <script src="index.js"></script>
+    <style>
+        .app2-color-preview {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 </body>
 </html>
