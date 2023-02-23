@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--import Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <title>Custom Directives</title>
+</head>
+<body>
+    
+    <div id="app1">
+        <h3>Global directive</h3>  
+        <input v-focus-global>
+    </div>
+
+    <div id="app2">
+        <h3>Local directive</h3>
+        <input v-focus_local>
+    </div>
+
+    <div id="app3">
+        <h3>Hooks arguments</h3>
+        <div v-demo:foo.a.b="message"></div>
+    </div>
+
+    <div id="app4">
+        <h3>Dynamic Arguments</h3>
+        <p v-pin:[direction] = "200">This element is fixed in 200px on {{ direction }} of the page</p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
