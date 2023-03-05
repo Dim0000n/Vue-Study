@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <title>Render-functions</title>
+</head>
+<body>
+    <div id="app1">
+        <h3>Anchored-heading</h3>
+        <anchored-heading :level="1">H1</anchored-heading>
+        <anchored-heading :level="2">H2</anchored-heading>
+        <anchored-heading :level="3">H3</anchored-heading>
+    </div>
+
+    <div id="app2">
+        <h3>Complete example</h3>
+        <anchored-heading-complete :level="1">H1 complete</anchored-heading-complete>
+        <anchored-heading-complete :level="2">H2 complete</anchored-heading-complete>
+        <anchored-heading-complete :level="3">H3 complete</anchored-heading-complete>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
