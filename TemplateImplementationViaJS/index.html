@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <title>Template Implementation via JS</title>
+</head>
+<body>
+    <div id="app1">
+        <h3>V-if and V-for</h3>
+        <ul v-if="items.length">
+            <li v-for="item in items">{{ item.name }}</li>
+        </ul>
+        <p v-else>There is nothing to show.</p>
+    </div>
+
+    <div id="app2">
+        <h3>v-if and v-for via render-function</h3>
+        <v-if-v-for-render :items="items"></v-if-v-for-render>
+    </div>
+
+    <div id="app3">
+        <v-model-render :value="value"></v-model-render>
+        <p>{{ value }}</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
